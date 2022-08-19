@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastelaria</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body onload="config()">
+  <div id="app">
+    <div class="container">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp pedir">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Novo Pedido</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" id="nome" name="nome">
+            <label class="mdl-textfield__label" for="nome">Nome</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" id="telefone" name="telefone">
+            <label class="mdl-textfield__label" for="telefone">Telefone</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" id="endereco" name="endereco">
+            <label class="mdl-textfield__label" for="endereco">Endereço</label>
+          </div>
+          <ul class="demo-list-three mdl-list">
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">restaurant</i>
+                <span>Pastel cascata</span>
+                <span class="mdl-list__item-text-body">
+                  Pastel fora do modelo agíl, o mais pedido da pastelaria!
+                </span>
+              </span>
+              <span class="mdl-list__item-secondary-action">
+                <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                  <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="Pastel cascata" />
+                </label>
+              </span>
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">restaurant</i>
+                <span>Pastel onpremisses</span>
+                <span class="mdl-list__item-text-body">
+                  Não Tem muito recheio
+                </span>
+              </span>
+              <span class="mdl-list__item-secondary-action">
+                <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-2">
+                  <input type="radio" id="list-option-2" class="mdl-radio__button" name="options" value="Pastel onpremisses" />
+                </label>
+              </span>
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">restaurant</i>
+                <span>Pastel monolito</span>
+                <span class="mdl-list__item-text-body">
+                  Parece uma boa até te dar dor de cabeça
+                </span>
+              </span>
+              <span class="mdl-list__item-secondary-action">
+                <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-3">
+                  <input type="radio" id="list-option-3" class="mdl-radio__button" name="options" value="Pastel monolito" />
+                </label>
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--primary" onclick="enviarPedido()">
+            Realizar pedido
+          </button>
+        </div>
+      </div>
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp andamento">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Andamento</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <ul class="mdl-list" id="ul-andamento">
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">timer</i>
+                <span>Aguardando Confirmação</span>
+                <span class="mdl-list__item-text-body">
+                  A pastelaria precisa verificar se o projeto pode ser entregue no prazo.
+                </span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
